@@ -1,3 +1,3 @@
-# NMAP Cheatsheet
+# Nmap Cheatsheet
 
 [Reference guide](https://hackertarget.com/nmap-cheatsheet-a-quick-reference-guide/)
