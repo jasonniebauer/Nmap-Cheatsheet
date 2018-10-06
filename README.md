@@ -1,5 +1,12 @@
 # Nmap Cheatsheet
 
+What is Nmap?
+
+How is it used?
+```
+nmap [ <Scan Type> ...] [ <Options> ] { <target specification> }
+```
+
 [Reference link 1](https://hackertarget.com/nmap-cheatsheet-a-quick-reference-guide/)  
 [Beginner's Guide to Nmap](https://www.linux.com/learn/beginners-guide-nmap)  
 [Top 32 Nmap Command](https://www.cyberciti.biz/security/nmap-command-examples-tutorials/)  
