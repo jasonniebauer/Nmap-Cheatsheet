@@ -4,9 +4,12 @@ Quick reference guide for the scanning networks with Nmap.
 **Table of Contents**
 1. [What is Nmap?](#what-is-nmap)  
 2. [How to Use Nmap](#how-to-use-nmap)  
-    1. [Command Line Syntax](#command-line)
+    1. [Command Line](#command-line)
         1. [Basic Syntax](#basic-syntax)  
         1. [Get Help](#get-help)  
+3. Basic Scanning Techniques[#basic-scanning-techniques]  
+    1. [Scan a Single Target](#scan-a-single-target)  
+    2. [Scan Multiple Targets](#scan-multiple-targets)
 
 ## What is Nmap?
 Nmap ("Network Mapper") is a free and open source utility for network discovery and security auditing. Many systems and network administrators also find it useful for tasks such as network inventory, managing service upgrade schedules, and monitoring host or service uptime. Nmap uses raw IP packets in novel ways to determine what hosts are available on the network, what services (application name and version) those hosts are offering, what operating systems (and OS versions) they are running. It was designed to rapidly scan large networks, but works fine against single hosts.
@@ -32,17 +35,7 @@ nmap [ <Scan Type> ...] [ <Options> ] { <target specification> }
 nmap -h
 ```
 
-## Host Discovery
-The `-p` switch determines the type of ping to perform.
-
-| Nmap Switch | Description                 |
-|:------------|:----------------------------|
-| **-PI**     | ICMP ping                   |
-| **-Po**     | No ping                     |
-| **-PS**     | SYN ping                    |
-| **-PT**     | TCP ping                    |
-
-## Scan Techniques
+## Basic Scanning Techniques
 The `-s` switch determines the type of scan to perform.
 
 | Nmap Switch | Description                 |
@@ -59,6 +52,26 @@ The `-s` switch determines the type of scan to perform.
 | **-sT**     | TCP connect scan            |
 | **-sW**     | Windows scan                |
 | **-sX**     | XMAS scan                   |
+
+### Scan a Single Target
+```shell
+nmap [target]
+```
+
+### Scan Multiple Targets
+```shell
+nmap [target1, target2, etc]
+```
+
+## Host Discovery
+The `-p` switch determines the type of ping to perform.
+
+| Nmap Switch | Description                 |
+|:------------|:----------------------------|
+| **-PI**     | ICMP ping                   |
+| **-Po**     | No ping                     |
+| **-PS**     | SYN ping                    |
+| **-PT**     | TCP ping                    |
 
 ## Port Specification and Scan Order
 
