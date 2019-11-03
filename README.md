@@ -7,7 +7,7 @@ Quick reference guide for the scanning networks with Nmap.
     1. [Command Line](#command-line)
         1. [Basic Syntax](#basic-syntax)  
         1. [Get Help](#get-help)  
-3. Basic Scanning Techniques[#basic-scanning-techniques]  
+3. [Basic Scanning Techniques](#basic-scanning-techniques)  
     1. [Scan a Single Target](#scan-a-single-target)  
     2. [Scan Multiple Targets](#scan-multiple-targets)
 
