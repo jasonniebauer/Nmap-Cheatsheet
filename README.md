@@ -1,5 +1,5 @@
 # Nmap Cheat Sheet
-Quick reference guide for the scanning networks with Nmap.
+Reference guide for the scanning networks with Nmap.
 
 **Table of Contents**
 1. [What is Nmap?](#what-is-nmap)  
