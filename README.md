@@ -47,8 +47,43 @@ Quick reference guide for the scanning networks with Nmap.
     15. [Manually Specify DNS Server](#manually-specify-dns-server)  
     16. [Create a Host List](#create-a-host-list)  
 6. [Firewall Evasion Techniques](#firewall-evasion-techniques)  
+    1. [Fragment Packets](#fragment-packets)  
+    2. [Specify a Specific MTU](#specify-a-specify-mtu)  
+    3. [Use a Decoy](#use-a-decoy)  
+    4. [Idle Zombie Scan](#idle-zombie-scan)  
+    5. [Manually Specify a Source Port](#manually-specify-a-source-port)  
+    6. [Append Random Data](#append-random-data)  
+    7. [Randomize Target Scan Order](#randomize-target-scan-order)  
+    8. [Spoof MAC Address](#spoof-mac-address)  
+    9. [Send Bad Checksums](#send-bad-checksums)  
 7. [Advanced Scanning Functions](#advanced-scanning-functions)  
+    1. [TCP SYN Scan](#tcp-syn-scan)  
+    2. [TCP Connect Scan](#tcp-connect-scan)  
+    3. [UDP Scan](#udp-scan)  
+    4. [TCP NULL Scan](#tcp-null-scan)  
+    5. [TCP FIN Scan](#tcp-fin-scan)  
+    6. [Xmas Scan](#xmas-scan)  
+    7. [TCP ACK Scan](#tcp-ack-scan)  
+    8. [Custom TCP Scan](#custom-tcp-scan)  
+    9. [IP Protocol Scan](#ip-protocol-scan)  
+    10. [Send Raw Ethernet Packets](#send-raw-ethernet-packets)  
+    11. [Send IP Packets](#send-ip-packets)    
 8. [Timing Options](#timing-options)  
+    1. [Timing Templates](#timing-templates)  
+    2. [Set the Packet TTL](#set-the-packet-ttl)  
+    3. [Minimum Number of Parallel Operations](#minimum-number-of-parallel-operations)  
+    4. [Maximum Number of Parallel Operations](#maximum-number-of-parallel-operations)  
+    5. [Minimum Host Group Size](#minimum-host-group-size)  
+    6. [Maximum Host Group Size](#maximum-host-group-size)  
+    7. [Maximum RTT Timeout](#maximum-rtt-timeout)  
+    8. [Initial RTT TImeout](#initial-rtt-timeout)  
+    10. [Maximum Number of Retries](#maximum-number-of-retries)  
+    11. [Host Timeout](#host-timeout)  
+    12. [Minimum Scan Delay](#minimum-scan-delay)  
+    13. [Maximum Scan Delay](#maximum-scan-delay)  
+    14. [Minimum Packet Rate](#minimum-packet-rate)  
+    15. [Maximum Packet Rate](#maximum-packet-rate)  
+    16. [Defeat Reset Rate Limits](#defeat-reset-rate-limits)  
 9. [Output Options](#output-options)  
     1. [Save Output to a Text File](#save-output-to-a-text-file)  
     2. [Save Output to a XML File](#save-output-to-a-xml-file)  
@@ -357,10 +392,184 @@ Not specifying a `T` value will default to `-T3`, or normal speed.
 | Nmap Switch | Description                 |
 |:------------|:----------------------------|
 
+### Fragment Packets
+```shell
+nmap -f [target]
+```
+
+### Specify a Specific MTU
+```shell
+nmap --mtu [MTU] [target]
+```
+
+### Use a Decoy
+```shell
+nmap -D RND:[number] [target]
+```
+
+### Idle Zombie Scan
+```shell
+nmap -sI [zombie] [target]
+```
+
+### Manually Specify a Source Port
+```shell
+nmap --source-port [port] [target]
+```
+
+### Append Random Data
+```shell
+nmap --data-length [size] [target]
+```
+
+### Randomize Target Scan Order
+```shell
+nmap --randomize-hosts [target]
+```
+
+### Spoof MAC Address
+```shell
+nmap --spoof-mac [MAC|0|vendor] [target]
+```
+
+### Send Bad Checksums
+```shell
+nmap --badsum [target]
+```
   
 ## Advanced Scanning Functions
 
+### TCP SYN Scan
+```shell
+nmap -sS [target]
+```
+
+### TCP Connect Scan
+```
+nmap -sT [target]
+```
+
+### UDP Scan
+```shell
+nmap -sU [target]
+```
+
+### TCP NULL Scan
+```shell
+nmap -sN [target]
+```
+
+### TCP FIN Scan
+```shell
+nmap -sF [target]
+```
+
+### Xmas Scan
+```shell
+nmap -sA [target]
+```
+
+### TCP ACK Scan
+```shell
+nmap -sA [target]
+```
+
+### Custom TCP Scan
+```shell
+nmap --scanflags [flags] [target]
+```
+
+### IP Protocol Scan
+```shell
+nmap -sO [target]
+```
+
+### Send Raw Ethernet Packets
+```shell
+nmap --send-eth [target]
+```
+
+### Send IP Packets
+```shell
+nmap --send-ip [target]
+```
+
 ## Timing Options
+
+### Timing Templates
+```shell
+nmap -T[0-5] [target]
+```
+
+### Set the Packet TTL
+```shell
+nmap --ttl [time] [target]
+```
+
+### Minimum NUmber of Parallel Operations
+```shell
+nmap --min-parallelism [number] [target]
+```
+
+### Maximum Number of Parallel Operations
+```shell
+nmap --max-parallelism [number] [target]
+```
+
+### Minimum Host Group Size
+```shell
+nmap --min-hostgroup [number] [targets]
+```
+
+### Maximum Host Group Size
+```shell
+nmap --max-hostgroup [number] [targets]
+```
+
+### Maximum RTT Timeout
+```shell
+nmap --initial-rtt-timeout [time] [target]
+```
+
+### Initial RTT Timeout
+```shell
+nmap --max-rtt-timeout [TTL] [target]
+```
+
+### Maximum Number of Retries
+```shell
+nmap --max-retries [number] [target]
+```
+
+### Host Timeout
+```shell
+nmap --host-timeout [time] [target]
+```
+
+### Minimum Scan Delay
+```shell
+nmap --scan-delay [time] [target]
+```
+
+### Maxmimum Scan Delay
+```shell
+nmap --max-scan-delay [time] [target]
+```
+
+### Minimum Packet Rate
+```shell
+nmap --min-rate [number] [target]
+```
+
+### Maximum Packet Rate
+```shell
+nmap --max-rate [number] [target]
+```
+
+### Defeat Reset Rate Limits
+```shell
+nmap --defeat-rst-ratelimit [target]
+```
 
 ## Output Options
 
