@@ -29,6 +29,23 @@ Quick reference guide for the scanning networks with Nmap.
     10. [Troubleshoot Version Scan](#troubleshoot-version-scan)  
     11. [Perform a RPC Scan](#perform-a-rpc-scan) 
 5. [Discovery Options](#discovery-options)  
+    1. [Perform a Ping Only Scan](#perform-a-ping-only-scan)  
+    2. [Do Not Ping](#do-not-ping)  
+    3. [TCP SYN Ping](#tcp-syn-ping)  
+    3. [TCP ACK Ping](#tcp-ack-ping)  
+    4. [UDP Ping](#udp-ping)  
+    5. [SCTP INIT Ping](#sctp-init-ping)  
+    6. [ICMP Echo Ping](#icmp-echo-ping)  
+    7. [ICMP Timestamp Ping](#icmp-timestamp-ping)  
+    8. [ICMP Address Mask Ping](#icmp-address-mask-ping)  
+    9. [IP Protocol Ping](#ip-protocol-ping)  
+    10. [ARP Ping](#arp-ping)  
+    11. [Traceroute](#traceroute)  
+    12. [Force Reverse DNS Resolution](#force-reverse-dns-resolution)  
+    13. [Disable Reverse DNS Resolution](#disable-reverse-dns-resolution)  
+    14. [Alternative DNS Lookup](#alternate-dns-lookup)  
+    15. [Manually Specify DNS Server](#manually-specify-dns-server)  
+    16. [Create a Host List](#create-a-host-list)  
 6. [Firewall Evasion Techniques](#firewall-evasion-techniques)  
 7. [Advanced Scanning Functions](#advanced-scanning-functions)  
 8. [Timing Options](#timing-options)  
@@ -213,6 +230,91 @@ The `-p` switch determines the type of ping to perform.
 | **-Po**     | No ping                     |
 | **-PS**     | SYN ping                    |
 | **-PT**     | TCP ping                    |
+
+### Perform a Ping Only Scan
+```shell
+nmap -sn [target]
+```
+
+### Do Not Ping
+```shell
+nmap -Pn [target]
+```
+
+### TCP SYN Ping
+```shell
+nmap -PS [target]
+```
+
+### TCP ACK Ping
+```shell
+nmap -PA [target]
+```
+
+### UDP Ping
+```shell
+nmap -PU [target]
+```
+
+### SCTP INIT Ping
+```shell
+nmap -PY [target]
+```
+
+### ICMP Echo Ping
+```shell
+nmap -PE [target]
+```
+### ICMP Timestamp Ping
+```shell
+nmap -PP [target]
+```
+
+### ICMP Address Mask Ping
+```shell
+nmap -PM [target]
+```
+
+### IP Protocol Ping
+```shell
+nmap -PO [target]
+```
+
+### ARP ping
+```shell
+nmap -PR [target]
+```
+
+### Traceroute
+```shell
+nmap --traceroute [target]
+```
+
+### Force Reverse DNS Resolution
+```shell
+nmap -R [target]
+```
+
+### Disable Reverse DNS Resolution
+```shell
+nmap -n [target]
+```
+
+### Alternative DNS Lookup
+```shell
+nmap --system-dns [target]
+```
+
+### Manually Specify DNS Server
+Can specify a single server or multiple.
+```shell
+nmap --dns-servers [servers] [target]
+```
+
+### Create a Host List
+```shell
+nmap -sL [targets]
+```
 
 ## Port Specification and Scan Order
 
